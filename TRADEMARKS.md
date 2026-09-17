@@ -1,0 +1,14 @@
+# Brand and identity notice
+
+Copyright © 2026 Sven Thiermann. All rights reserved in the approved ST monogram and new branded presentation artwork.
+
+The website's MIT license excludes:
+
+- The ST monogram, including copies embedded in `public/index.html` and `public/privacy.html`.
+- `public/assets/mark.svg`, the website favicon.
+- `public/assets/og-image.svg` and `public/assets/og-image.png`, the branded social preview artwork.
+- Reproductions or adaptations of those identity assets.
+
+Permission to use the website's code does not grant permission to use these identity assets or imply an association with, or endorsement by, Sven Thiermann. Obtain separate permission for reuse of the reserved assets.
+
+The [asset rights notice](public/assets/LICENSE) identifies the reserved artwork. JavaScript, CSS and the remaining website code and documentation are covered by the root [MIT license](LICENSE). The installable STN Ultradesign skill has its own MIT license in the skill repository.
