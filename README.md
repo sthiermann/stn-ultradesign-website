@@ -2,9 +2,9 @@
 
 The public website for **STN Ultradesign**, an AI UI/UX design skill for Codex and Claude Code. It introduces the workflow, demonstrates how requirements become an interface, and provides installation instructions.
 
-[Website](https://sthiermann.github.io/stn-ultradesign-website/) · [Skill repository](https://github.com/sthiermann/stn-ultradesign) · [Skill installation](https://github.com/sthiermann/stn-ultradesign/blob/v0.6.2/docs/installation.md)
+[Website](https://sthiermann.github.io/stn-ultradesign-website/) · [Skill repository](https://github.com/sthiermann/stn-ultradesign) · [Skill installation](https://github.com/sthiermann/stn-ultradesign/blob/v0.7.0/docs/installation.md)
 
-The website currently presents skill release **v0.6.2**, including explicit layout stress checks, widget duplication review and verification of actual drilldown filter results. The [skill README](https://github.com/sthiermann/stn-ultradesign/blob/v0.6.2/README.md) and installation documentation are the source of truth for installation commands and launch prompts. This repository contains the website, not the installable skill.
+The website currently presents skill release **v0.7.0**, including machine-checkable delivery bindings, local evidence-file integrity and explicit comprehension, state and geometry review. The [skill README](https://github.com/sthiermann/stn-ultradesign/blob/v0.7.0/README.md) and installation documentation are the source of truth for installation commands and launch prompts. This repository contains the website, not the installable skill.
 
 ## Run locally
 
