@@ -1,0 +1,67 @@
+/* ST Signature artwork © 2026 Sven Thiermann. See assets/LICENSE.
+   The approved motion runs once on entry; this wrapper only controls playback. */
+.footer-signature .stn-brand-base { opacity: 1; }
+.footer-signature .stn-brand-signature-s,
+.footer-signature .stn-brand-signature-bridge,
+.footer-signature .stn-brand-signature-t { display: none; }
+.footer-signature:is([data-state="playing"], [data-state="paused"]) {
+  --stn-signature-cycle: 8s cubic-bezier(.42, 0, .58, 1) 1 both;
+}
+.footer-signature:is([data-state="playing"], [data-state="paused"]) .stn-brand-base {
+  animation: stn-brand-signature-base var(--stn-signature-cycle);
+}
+.footer-signature:is([data-state="playing"], [data-state="paused"]) :is(.stn-brand-signature-s, .stn-brand-signature-bridge, .stn-brand-signature-t) { display: inline; }
+.footer-signature:is([data-state="playing"], [data-state="paused"]) .stn-brand-signature-s path {
+  stroke-dasharray: 124 256;
+  stroke-dashoffset: 0;
+  animation: stn-brand-signature-s var(--stn-signature-cycle);
+}
+.footer-signature:is([data-state="playing"], [data-state="paused"]) .stn-brand-signature-bridge path {
+  stroke-dasharray: 16 18;
+  animation: stn-brand-signature-bridge var(--stn-signature-cycle);
+}
+.footer-signature:is([data-state="playing"], [data-state="paused"]) .stn-brand-signature-t path:nth-child(n+3) {
+  stroke-dasharray: 47 49;
+  animation: stn-brand-signature-stem var(--stn-signature-cycle);
+}
+.footer-signature[data-state="paused"] * { animation-play-state: paused !important; }
+@keyframes stn-brand-signature-base {
+  0%, 100% { opacity: 0; }
+}
+@keyframes stn-brand-signature-s {
+  0%, 38%, 100% { stroke-dasharray: 124 256; }
+  60% { stroke-dasharray: 0 256; }
+}
+
+@keyframes stn-brand-signature-bridge {
+  0%, 38%, 100% { stroke-dashoffset: 17; }
+  24% { stroke-dashoffset: 0; }
+}
+@keyframes stn-brand-signature-stem {
+  /* A shared nonzero velocity crosses the loop seam. There are no dwell frames.
+     47 - 15 = the original 32-unit stem; 48 is hidden; 3 leaves a four-unit centre gap. */
+  0%, 100% {
+    stroke-dashoffset: 15;
+    animation-timing-function: cubic-bezier(.333333, .116363636, .666667, 1);
+  }
+  24% {
+    stroke-dashoffset: 48;
+    animation-timing-function: cubic-bezier(.333333, 0, .666667, 1);
+  }
+  60% {
+    stroke-dashoffset: 3;
+    animation-timing-function: cubic-bezier(.333333, 0, .666667, .466666667);
+  }
+}
+
+
+html[data-motion="off"] .footer-signature * { animation: none !important; }
+html[data-motion="off"] .footer-signature .stn-brand-base { opacity: 1 !important; }
+html[data-motion="off"] .footer-signature :is(.stn-brand-signature-s, .stn-brand-signature-bridge, .stn-brand-signature-t),
+html[data-motion="off"] .signature-toggle { display: none !important; }
+@media (prefers-reduced-motion: reduce), (forced-colors: active) {
+  .footer-signature * { animation: none !important; }
+  .footer-signature .stn-brand-base { opacity: 1 !important; }
+  .footer-signature :is(.stn-brand-signature-s, .stn-brand-signature-bridge, .stn-brand-signature-t),
+  .signature-toggle { display: none !important; }
+}

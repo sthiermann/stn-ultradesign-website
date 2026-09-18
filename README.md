@@ -20,12 +20,12 @@ Open `http://localhost:8770/`. Serve `public/` as the document root; all page as
 
 - `public/index.html` — the main page, interactive demonstrations and installation copy.
 - `public/privacy.html` — an explanation of local display preferences and hosting.
-- `public/assets/` — local styles, scripts, identity assets and social preview.
+- `public/assets/` — local styles, scripts, identity assets and social preview. `signature.css` and `signature.js` provide the homepage footer’s approved ST Signature animation.
 - `public/robots.txt` and `public/sitemap.xml` — crawler configuration.
 - `scripts/validate_site.py` — local link, asset, metadata and accessibility-reference checks.
 - `.github/workflows/pages.yml` — validation and GitHub Pages deployment.
 
-The site uses native HTML, CSS, JavaScript and inline SVG. There are no third-party runtime libraries, external web fonts or analytics. Light and dark appearances default to the system setting. The appearance and motion preferences are saved locally when browser storage is available. Scroll chapters also work through keyboard-accessible controls; reduced-motion settings use a manual presentation. Installation information remains available when JavaScript is disabled.
+The site uses native HTML, CSS, JavaScript and inline SVG. There are no third-party runtime libraries, external web fonts or analytics. Light and dark appearances default to the system setting. The appearance and motion preferences are saved locally when browser storage is available. Scroll chapters also work through keyboard-accessible controls; reduced-motion settings use a manual presentation. Installation information remains available when JavaScript is disabled. The homepage footer plays the approved ST Signature once when it enters view, with a play/pause overlay on the logo. The overlay appears on hover or keyboard focus and stays discoverable on touch; its accessible name distinguishes pause, resume and replay. It returns to the static monogram when finished or out of view; system reduced motion, forced colors and the website’s Motion off setting keep it static. This is a decorative brand moment, not a loading or progress indicator. Both footers use a blue button with the official white [in] icon to link directly to Sven Thiermann’s LinkedIn profile without embedded content or third-party scripts.
 
 ## Validate a change
 
@@ -36,6 +36,7 @@ node --check public/assets/appearance.js
 node --check public/assets/site.js
 node --check public/assets/journey.js
 node --check public/assets/experience.js
+node --check public/assets/signature.js
 ```
 
 If a checkout of the skill repository is available, also compare the pinned documentation links and launch prompt against it:
@@ -44,7 +45,7 @@ If a checkout of the skill repository is available, also compare the pinned docu
 python3 scripts/validate_site.py --skill-directory ../stn-ultradesign
 ```
 
-The validator does not replace browser review. Check desktop and mobile, both themes, keyboard navigation, reduced motion, the manual motion control, every scroll chapter and both installation paths after visual or interaction changes. Check the social image at `public/assets/og-image.png` whenever its editable SVG changes.
+The validator does not replace browser review. Check desktop and mobile, both themes, keyboard navigation, reduced motion, the manual motion control, every scroll chapter and both installation paths after visual or interaction changes. For the footer, inspect first visibility, Pause/Resume/Replay, the final static identity, leaving and re-entering view, motion-off states, and the LinkedIn link’s visible target and keyboard focus. Check the social image at `public/assets/og-image.png` whenever its editable SVG changes.
 
 After changing a CSS, JavaScript or image asset, refresh its cache key with `python3 scripts/stamp_assets.py` before validation and publication.
 
