@@ -32,3 +32,43 @@ html[data-motion="off"] { scroll-behavior: auto; }
   .brand .brand-mark, .mini-mark .brand-mark, .j-app-symbol .brand-mark { color: CanvasText; }
   .hero-art:after { display: none; }
 }
+
+/* The footer brings the personal identity and its creator into one clear close. */
+.site-footer { display: block; padding-block: 44px 24px; }
+.site-footer .footer-main { display: flex; align-items: center; justify-content: space-between; gap: 44px; padding-bottom: 34px; }
+.footer-identity { display: flex; align-items: center; gap: 22px; min-width: 0; }
+.footer-signature { width: 122px; flex: none; display: grid; justify-items: center; gap: 3px; }
+.footer-signature-mark { display: block; width: 96px; height: 96px; fill: none; color: var(--gold); }
+.signature-toggle { min-height: 44px; padding: 8px 5px; background: none; font-size: 11px; color: var(--muted); border-radius: 5px; white-space: nowrap; }
+.signature-toggle:hover { color: var(--gold); background: var(--soft-gold); }
+.footer-wordmark .brand { width: auto; color: var(--ink); }
+.site-footer .footer-wordmark p { margin: 12px 0 0; font-size: 13px; line-height: 1.6; }
+.footer-wordmark strong { font-weight: 500; color: var(--ink); }
+.footer-connect { display: flex; flex-direction: column; align-items: flex-start; gap: 12px; }
+.site-footer .footer-connect p { margin: 0; color: var(--muted); font-size: 13px; }
+.site-footer .footer-linkedin { display: inline-flex; justify-content: space-between; align-items: center; gap: 32px; min-height: 58px; padding: 16px 22px; border: 1px solid transparent; border-radius: 8px; background: var(--gold-bg); color: #17212a; font-size: 15px; font-weight: 600; box-shadow: 0 3px 0 #00000012; transition: transform .18s, box-shadow .18s; }
+.footer-linkedin svg { width: 20px; height: 20px; flex: none; }
+.site-footer .footer-linkedin:hover { color: #17212a; transform: translateY(-2px); box-shadow: 0 8px 22px #a878232b; }
+.site-footer .footer-bottom { display: flex; align-items: center; justify-content: space-between; gap: 24px; border-top: 1px solid var(--line); padding-top: 22px; }
+.site-footer .footer-bottom p { margin: 0; }
+.footer-bottom nav { display: flex; flex-wrap: wrap; gap: 22px; }
+.footer-bottom nav a { display: inline-flex; align-items: center; min-height: 44px; }
+html[data-motion="off"] .footer-linkedin { transition: none; }
+html[data-motion="off"] .footer-linkedin:hover { transform: none; }
+@media (max-width: 700px) {
+  .site-footer .footer-main { align-items: flex-start; flex-direction: column; gap: 28px; }
+  .footer-identity { gap: 16px; }
+  .footer-signature { width: 108px; }
+  .footer-signature-mark { width: 84px; height: 84px; }
+  .footer-connect { width: 100%; }
+  .site-footer .footer-linkedin { width: 100%; }
+  .site-footer .footer-bottom { align-items: flex-start; flex-direction: column; gap: 8px; }
+  .footer-bottom .footer-release { display: inline; margin-left: 10px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .site-footer .footer-linkedin:hover { transform: none; }
+}
+@media (forced-colors: active) {
+  .footer-signature-mark { color: CanvasText; }
+  .site-footer .footer-linkedin { border-color: ButtonText; color: LinkText; box-shadow: none; }
+}

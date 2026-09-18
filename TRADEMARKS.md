@@ -7,6 +7,7 @@ The website's MIT license excludes:
 - The ST monogram, including copies embedded in `public/index.html` and `public/privacy.html`.
 - `public/assets/mark.svg`, the website favicon.
 - `public/assets/og-image.svg` and `public/assets/og-image.png`, the branded social preview artwork.
+- The animated ST Signature construction embedded in `public/index.html`, including its reproduced identity geometry.
 - Reproductions or adaptations of those identity assets.
 
 Permission to use the website's code does not grant permission to use these identity assets or imply an association with, or endorsement by, Sven Thiermann. Obtain separate permission for reuse of the reserved assets.
