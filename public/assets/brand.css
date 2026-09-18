@@ -37,18 +37,24 @@ html[data-motion="off"] { scroll-behavior: auto; }
 .site-footer { display: block; padding-block: 44px 24px; }
 .site-footer .footer-main { display: flex; align-items: center; justify-content: space-between; gap: 44px; padding-bottom: 34px; }
 .footer-identity { display: flex; align-items: center; gap: 22px; min-width: 0; }
-.footer-signature { width: 122px; flex: none; display: grid; justify-items: center; gap: 3px; }
+.footer-signature { position: relative; width: 96px; height: 96px; flex: none; }
 .footer-signature-mark { display: block; width: 96px; height: 96px; fill: none; color: var(--gold); }
-.signature-toggle { min-height: 44px; padding: 8px 5px; background: none; font-size: 11px; color: var(--muted); border-radius: 5px; white-space: nowrap; }
-.signature-toggle:hover { color: var(--gold); background: var(--soft-gold); }
+.signature-toggle { position: absolute; inset: 0; width: 100%; height: 100%; padding: 0; background: none; color: var(--ink); border-radius: 10px; }
+.signature-control-icon { position: absolute; right: 0; bottom: 0; display: grid; place-items: center; width: 32px; height: 32px; border: 1px solid var(--line); border-radius: 50%; background: var(--surface); box-shadow: 0 3px 12px #00000020; opacity: 0; transition: opacity .16s; pointer-events: none; }
+.signature-control-icon svg { width: 18px; height: 18px; fill: currentColor; }
+.signature-toggle:hover .signature-control-icon, .signature-toggle:focus-visible .signature-control-icon { opacity: 1; }
+.signature-pause { display: none; }
+.footer-signature[data-state="playing"] .signature-play { display: none; }
+.footer-signature[data-state="playing"] .signature-pause { display: block; }
+@media (hover: none), (pointer: coarse) { .signature-control-icon { opacity: 1; } }
 .footer-wordmark .brand { width: auto; color: var(--ink); }
 .site-footer .footer-wordmark p { margin: 12px 0 0; font-size: 13px; line-height: 1.6; }
 .footer-wordmark strong { font-weight: 500; color: var(--ink); }
 .footer-connect { display: flex; flex-direction: column; align-items: flex-start; gap: 12px; }
 .site-footer .footer-connect p { margin: 0; color: var(--muted); font-size: 13px; }
-.site-footer .footer-linkedin { display: inline-flex; justify-content: space-between; align-items: center; gap: 32px; min-height: 58px; padding: 16px 22px; border: 1px solid transparent; border-radius: 8px; background: var(--gold-bg); color: #17212a; font-size: 15px; font-weight: 600; box-shadow: 0 3px 0 #00000012; transition: transform .18s, box-shadow .18s; }
-.footer-linkedin svg { width: 20px; height: 20px; flex: none; }
-.site-footer .footer-linkedin:hover { color: #17212a; transform: translateY(-2px); box-shadow: 0 8px 22px #a878232b; }
+.site-footer .footer-linkedin { display: inline-flex; justify-content: center; align-items: center; gap: 14px; min-height: 58px; padding: 16px 22px; border: 1px solid transparent; border-radius: 8px; background: #0a66c2; color: #fff; font-size: 15px; font-weight: 600; box-shadow: 0 3px 0 #00000012; transition: background .18s, transform .18s, box-shadow .18s; }
+.footer-linkedin .linkedin-mark { width: 28px; height: 24px; object-fit: contain; flex: none; }
+.site-footer .footer-linkedin:hover { background: #004182; color: #fff; transform: translateY(-2px); box-shadow: 0 8px 22px #0a66c233; }
 .site-footer .footer-bottom { display: flex; align-items: center; justify-content: space-between; gap: 24px; border-top: 1px solid var(--line); padding-top: 22px; }
 .site-footer .footer-bottom p { margin: 0; }
 .footer-bottom nav { display: flex; flex-wrap: wrap; gap: 22px; }
@@ -58,7 +64,7 @@ html[data-motion="off"] .footer-linkedin:hover { transform: none; }
 @media (max-width: 700px) {
   .site-footer .footer-main { align-items: flex-start; flex-direction: column; gap: 28px; }
   .footer-identity { gap: 16px; }
-  .footer-signature { width: 108px; }
+  .footer-signature { width: 84px; height: 84px; }
   .footer-signature-mark { width: 84px; height: 84px; }
   .footer-connect { width: 100%; }
   .site-footer .footer-linkedin { width: 100%; }
@@ -71,4 +77,5 @@ html[data-motion="off"] .footer-linkedin:hover { transform: none; }
 @media (forced-colors: active) {
   .footer-signature-mark { color: CanvasText; }
   .site-footer .footer-linkedin { border-color: ButtonText; color: LinkText; box-shadow: none; }
+  .footer-linkedin .linkedin-mark { display: none; }
 }

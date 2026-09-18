@@ -13,3 +13,7 @@ The website's MIT license excludes:
 Permission to use the website's code does not grant permission to use these identity assets or imply an association with, or endorsement by, Sven Thiermann. Obtain separate permission for reuse of the reserved assets.
 
 The [asset rights notice](public/assets/LICENSE) identifies the reserved artwork. JavaScript, CSS and the remaining website code and documentation are covered by the root [MIT license](LICENSE). The installable STN Ultradesign skill has its own MIT license in the skill repository.
+
+## LinkedIn profile icon
+
+`public/assets/linkedin-in-white.png` is the unmodified white [in] logo from [LinkedIn’s official downloads](https://brand.linkedin.com/downloads). It links to Sven Thiermann’s LinkedIn profile under the [permitted profile-link use](https://brand.linkedin.com/in-logo). LinkedIn and the [in] logo are trademarks of LinkedIn Corporation and its affiliates. This asset is excluded from the MIT license; no affiliation with or endorsement by LinkedIn is implied.

@@ -11,7 +11,7 @@
 
   function setState(state) {
     signature.dataset.state = state;
-    button.textContent = state === 'playing' ? 'Pause signature' : state === 'paused' ? 'Resume signature' : 'Replay signature';
+    button.setAttribute('aria-label', state === 'playing' ? 'Pause signature' : state === 'paused' ? 'Resume signature' : 'Replay signature');
   }
 
   function start() {
