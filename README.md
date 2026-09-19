@@ -2,9 +2,9 @@
 
 The public website for **STN Ultradesign**, an AI UI/UX design skill for Codex and Claude Code. It introduces the workflow, demonstrates how requirements become an interface, and provides installation instructions.
 
-[Website](https://sthiermann.github.io/stn-ultradesign-website/) · [Skill repository](https://github.com/sthiermann/stn-ultradesign) · [Skill installation](https://github.com/sthiermann/stn-ultradesign/blob/v0.8.0/docs/installation.md)
+[Website](https://sthiermann.github.io/stn-ultradesign-website/) · [Skill repository](https://github.com/sthiermann/stn-ultradesign) · [Skill installation](https://github.com/sthiermann/stn-ultradesign/blob/v0.9.0/docs/installation.md)
 
-The website currently presents skill release **v0.8.0**, including guided questions with reasoned recommendations, local Markdown work items, precise acceptance criteria and evidence-based delivery review. Existing layout, comprehension and state checks remain part of the workflow. The [skill README](https://github.com/sthiermann/stn-ultradesign/blob/v0.8.0/README.md) and installation documentation are the source of truth for installation commands and launch prompts. This repository contains the website, not the installable skill.
+The website currently presents skill release **v0.9.0**, including version-aware resumption, bounded work items closed against observed results, reproducible concept-to-implementation comparisons, and preservation of domain behavior, defaults and saved preferences. Guided discovery, layout and state checks remain part of the workflow. The [skill README](https://github.com/sthiermann/stn-ultradesign/blob/v0.9.0/README.md) and installation documentation are the source of truth for installation commands and launch prompts. This repository contains the website, not the installable skill.
 
 ## Run locally
 
@@ -39,7 +39,7 @@ node --check public/assets/experience.js
 node --check public/assets/signature.js
 ```
 
-If a checkout of the skill repository is available, also compare the pinned documentation links and launch prompt against it:
+If a checkout of the skill repository is available, also compare the pinned documentation links and launch and resume prompts against it:
 
 ```sh
 python3 scripts/validate_site.py --skill-directory ../stn-ultradesign
@@ -59,7 +59,7 @@ Actions use Node.js 24 and are pinned to verified commit hashes, including the a
 
 The canonical address is `https://sthiermann.github.io/stn-ultradesign-website/`. If the hosting address changes, update the canonical links and social metadata in the HTML, `robots.txt`, `sitemap.xml` and this README together.
 
-When advancing the skill release, update all pinned installation and documentation links, visible version labels and this README. Confirm the new skill tag exists before deploying those links. Keep the visible prompt in `index.html` and the client-switching prompt in `site.js` consistent with the skill README.
+When advancing the skill release, update all pinned installation and documentation links, visible version labels and this README. Confirm the new skill tag exists before deploying those links. Keep the visible launch and resume prompts in `index.html` and their client-switching copies in `site.js` consistent with the skill README.
 
 ## License and brand
 

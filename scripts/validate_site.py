@@ -92,7 +92,7 @@ def markdown_anchors(text):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--skill-directory", type=Path, help="Check linked skill documents and the launch prompt against this checkout")
+    parser.add_argument("--skill-directory", type=Path, help="Check linked skill documents and the launch and resume prompts against this checkout")
     args = parser.parse_args()
     canonical = pages[PUBLIC / "index.html"].canonical or ""
     if not canonical.startswith("https://") or not canonical.endswith("/"):
@@ -142,13 +142,19 @@ def main():
         errors.append(f"Website release references disagree: {sorted(versions)}")
     index = (PUBLIC / "index.html").read_text()
     script = (PUBLIC / "assets/site.js").read_text()
-    prompt = re.search(r"const launchText = '(.*?)';", script)
-    if not prompt or f"$stn-ultradesign {prompt[1]}" not in index:
-        errors.append("Launch prompt differs between static HTML and client switching")
+    prompts = {}
+    for name in ("launch", "resume"):
+        prompt = re.search(rf"const {name}Text = '(.*?)';", script)
+        if not prompt or f'<p id="{name}-prompt">$stn-ultradesign {prompt[1]}</p>' not in index:
+            errors.append(f"{name.capitalize()} prompt differs between static HTML and client switching")
+        if prompt:
+            prompts[name] = prompt[1]
     if args.skill_directory:
         skill = args.skill_directory.resolve()
-        if prompt and prompt[1] not in (skill / "README.md").read_text():
-            errors.append("Launch prompt differs from the skill README")
+        skill_readme = (skill / "README.md").read_text()
+        for name, prompt in prompts.items():
+            if f"> $stn-ultradesign {prompt}\n" not in skill_readme:
+                errors.append(f"{name.capitalize()} prompt differs from the skill README")
         for ref in pages[PUBLIC / "index.html"].refs:
             match = re.match(r"https://github.com/sthiermann/stn-ultradesign/blob/v[\d.]+/([^#]+)(?:#(.*))?$", ref)
             if not match:
