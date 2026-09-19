@@ -1,4 +1,5 @@
 const launchText = 'Audit the entire frontend of this existing application using its current source code and running interface. Ask me about my requirements and design preferences, preserve existing capabilities, and develop a complete interactive design concept. Clarify which earlier design decisions still apply. Independently review and refine the concept with me. Implement production changes only after my approval.';
+const resumeText = 'Resume this design effort using the installed skill version. Reconcile the existing requirements, feedback, concept, work items and actual checks. Preserve settled answers and approvals. Resolve outstanding defects, establish a reproducible concept baseline, and continue through verified implementation within the approved scope.';
 const layerToggle = document.querySelector('.layer-toggle');
 layerToggle.addEventListener('click', () => {
   const expanded = layerToggle.getAttribute('aria-pressed') !== 'true';
@@ -29,6 +30,7 @@ function selectClient(tab) {
   }
   const invocation = tab.id === 'tab-codex' ? '$stn-ultradesign' : '/stn-ultradesign:stn-ultradesign';
   document.getElementById('launch-prompt').textContent = `${invocation} ${launchText}`;
+  document.getElementById('resume-prompt').textContent = `${invocation} ${resumeText}`;
   document.querySelector('.copy-status').textContent = '';
 }
 tabs.forEach((tab, index) => {
