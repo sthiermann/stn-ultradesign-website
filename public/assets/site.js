@@ -7,7 +7,7 @@ layerToggle.addEventListener('click', () => {
   layerToggle.innerHTML = expanded ? 'Assemble the interface <span aria-hidden="true">↙</span>' : 'Inspect the layers <span aria-hidden="true">↗</span>';
 });
 const storyCaptions = {
-  requirements: 'Your priorities become concrete requirements, with existing capabilities kept in view.',
+  requirements: 'Reasoned recommendations turn your answers into requirements, with existing capabilities kept in view.',
   system: 'Translate the direction into shared type, color, components and interaction rules.',
   design: 'Bring the pieces together in complete, reviewable journeys.',
   review: 'Check the result against the requirements and refine what the evidence reveals.'
