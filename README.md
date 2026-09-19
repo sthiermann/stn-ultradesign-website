@@ -53,7 +53,9 @@ After changing a CSS, JavaScript or image asset, refresh its cache key with `pyt
 
 The workflow publishes only `public/` to GitHub Pages after validation. It runs checks on pull requests and deploys successful pushes to `main`; it can also be started manually on `main`.
 
-In the repository's **Settings → Pages**, select **GitHub Actions** as the build and deployment source. The workflow uses the `github-pages` environment and the standard Pages deployment permissions. Action versions are pinned to verified commit hashes.
+In the repository's **Settings → Pages**, select **GitHub Actions** as the build and deployment source. The workflow uses the `github-pages` environment and the standard Pages deployment permissions. The configured environment requires owner approval; the workflow does not approve its own deployments.
+
+Actions use Node.js 24 and are pinned to verified commit hashes, including the artifact uploader bundled by the Pages action. Jobs use the supported `ubuntu-24.04` hosted image explicitly, retain a ten-minute timeout and do not persist checkout credentials. The fixed OS label avoids an unreviewed distribution change while receiving GitHub's maintained image updates. Node.js runs in the CI jobs; the deployed site consists only of static files.
 
 The canonical address is `https://sthiermann.github.io/stn-ultradesign-website/`. If the hosting address changes, update the canonical links and social metadata in the HTML, `robots.txt`, `sitemap.xml` and this README together.
 
