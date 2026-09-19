@@ -17,7 +17,7 @@
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
   const compact = window.matchMedia('(max-width: 850px)');
   const stories = [
-    ['Start with what matters.', 'Roles, context and continuity. Turn the needs of your application into decisions the design can answer.'],
+    ['Start with what matters.', 'Focused questions. Reasoned recommendations. Connect your answers to decisions the design can demonstrate.'],
     ['Give the decisions a shared language.', 'The requirements become type, color, components and behavior. Different parts, designed to work together.'],
     ['Bring the whole task into view.', 'Assemble the system around real work: find an order, compare its context, inspect the detail and return.'],
     ['Close the loop with the brief.', 'Trace the experience back to each requirement. Review what works, expose the gaps and refine before agreement.']
