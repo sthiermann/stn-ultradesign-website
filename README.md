@@ -2,9 +2,9 @@
 
 The public website for **STN Ultradesign**, an AI UI/UX design skill for Codex and Claude Code. It introduces the workflow, demonstrates how requirements become an interface, and provides installation instructions.
 
-[Website](https://sthiermann.github.io/stn-ultradesign-website/) · [Skill repository](https://github.com/sthiermann/stn-ultradesign) · [Skill installation](https://github.com/sthiermann/stn-ultradesign/blob/v0.9.0/docs/installation.md)
+[Website](https://sthiermann.github.io/stn-ultradesign-website/) · [Skill repository](https://github.com/sthiermann/stn-ultradesign) · [Skill installation](https://github.com/sthiermann/stn-ultradesign/blob/v0.9.1/docs/installation.md)
 
-The website currently presents skill release **v0.9.0**, including version-aware resumption, bounded work items closed against observed results, reproducible concept-to-implementation comparisons, and preservation of domain behavior, defaults and saved preferences. Guided discovery, layout and state checks remain part of the workflow. The [skill README](https://github.com/sthiermann/stn-ultradesign/blob/v0.9.0/README.md) and installation documentation are the source of truth for installation commands and launch prompts. This repository contains the website, not the installable skill.
+The website currently presents skill release **v0.9.1**, including first-use and connected-page review, shared-component checks in their actual host, navigation and browser-update recovery, and a current work queue that separates decisions from verification gaps. The workflow adapts to content sites, storefronts, tools and applications. Guided discovery, feature preservation and reproducible concept comparisons remain part of the workflow. The [skill README](https://github.com/sthiermann/stn-ultradesign/blob/v0.9.1/README.md) and installation documentation are the source of truth for installation commands and launch prompts. This repository contains the website, not the installable skill.
 
 ## Run locally
 
